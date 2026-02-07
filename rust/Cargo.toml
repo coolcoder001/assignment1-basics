@@ -1,0 +1,22 @@
+[package]
+name = "cs336_rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "cs336_rust"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23", features = ["extension-module"] }
+numpy = "0.23"
+candle-core = "0.8"
+candle-nn = "0.8"
+regex = "1"
+fancy-regex = "0.14"
+rayon = "1.10"
+indexmap = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
